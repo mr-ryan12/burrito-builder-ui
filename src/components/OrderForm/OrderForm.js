@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { addOrderApi } from '../../apiCalls'
 
 class OrderForm extends Component {
   constructor(props) {
@@ -6,7 +7,8 @@ class OrderForm extends Component {
     // this.props = props;
     this.state = {
       name: '',
-      ingredients: []
+      ingredients: [],
+      error: ''
     };
   }
 
@@ -26,11 +28,16 @@ class OrderForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const newOrder = {
-      id: Date.now(),
+      // id: Date.now(),
       name: this.state.name,
       ingredients: this.state.ingredients
     }
-    this.props.addOrder(newOrder)
+    // this.props.addOrder(newOrder)
+    addOrderApi(newOrder)
+      .then(data => {
+        this.props.addOrder(data)
+      })
+      .catch(error => this.setState({ error: error.message }))
     this.clearInputs();
   }
 

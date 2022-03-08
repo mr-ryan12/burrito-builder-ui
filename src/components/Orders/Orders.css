@@ -6,7 +6,7 @@
   background-color: #FFF;
 }
 
-.ingredient-list {
+/* .ingredient-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +14,7 @@
   list-style-type: none;
   padding: 0;
   width: 100%
-}
+} */
 
 .orders-container {
   display: grid;

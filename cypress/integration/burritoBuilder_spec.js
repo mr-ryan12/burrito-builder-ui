@@ -46,6 +46,11 @@ describe('Burrito Builder User Flow', () => {
       .should('have.text', 'Order: Nothing selected')
       .get('.submit-message')
       .should('have.text', 'Please add your name and ingredients to submit an order')
-  })
-      
+  });
+
+  it('Should add a name to the name input field', () => {
+    cy.get('input[name="name"]')
+      .type('Dwight')
+      .should('have.value', 'Dwight')
+  });
 });

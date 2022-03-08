@@ -15,7 +15,6 @@ class App extends Component {
   componentDidMount() {
     getOrders()
       .then(data => {
-        console.log(data.orders)
         this.setState({
           orders: data.orders
         })

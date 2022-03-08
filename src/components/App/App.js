@@ -23,6 +23,10 @@ class App extends Component {
       .catch(err => console.error('Error fetching:', err));
   }
 
+  // addOrder = order => {
+  //   this.setState({})
+  // }
+
   render() {
     return (
       <main className="App">

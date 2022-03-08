@@ -4,13 +4,35 @@ import {getOrders} from '../../apiCalls';
 import Orders from '../../components/Orders/Orders';
 import OrderForm from '../../components/OrderForm/OrderForm';
 
+
+// id: 1
+// ingredients: Array(5)
+// 0: "beans"
+// 1: "lettuce"
+// 2: "carnitas"
+// 3: "queso fresco"
+// 4: "jalapeno"
+// length: 5
+// [[Prototype]]: Array(0)
+// name: "Pat"
 class App extends Component {
-  constructor(props) {
+  constructor() {
     super();
+    this.state = {
+      orders: [
+        {id: 1, name: 'Pat', ingredients: ['beans', 'lettuce', 'carnitas', 'queso fresco', 'jalapeno']},
+        {id: 2, name: 'Jimmy', ingredients: ['rice', 'lettuce', 'chicken', 'salsa', 'sour creme']},
+        {id: 3, name: 'Sal', ingredients: ['corn', 'sofritas', 'tomato', 'guacomole', 'sriracha']},
+
+      ]
+    }
   }
 
   componentDidMount() {
     getOrders()
+      .then(data => {
+        console.log(data)
+      })
       .catch(err => console.error('Error fetching:', err));
   }
 

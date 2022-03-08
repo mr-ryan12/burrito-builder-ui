@@ -2,7 +2,7 @@
   "orders": [
     {
       "id": 1,
-      "name": "Pat",
+      "name": "Jimmy",
       "ingredients": [
         "beans",
         "lettuce",
@@ -13,7 +13,7 @@
     },
     {
       "id": 2,
-      "name": "Sam",
+      "name": "Nancy",
       "ingredients": [
         "steak",
         "pico de gallo",
@@ -25,7 +25,7 @@
     },
     {
       "id": 3,
-      "name": "Alex",
+      "name": "Bob",
       "ingredients": [
         "sofritas",
         "beans",

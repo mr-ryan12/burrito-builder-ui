@@ -4,17 +4,6 @@ import {getOrders} from '../../apiCalls';
 import Orders from '../../components/Orders/Orders';
 import OrderForm from '../../components/OrderForm/OrderForm';
 
-
-// id: 1
-// ingredients: Array(5)
-// 0: "beans"
-// 1: "lettuce"
-// 2: "carnitas"
-// 3: "queso fresco"
-// 4: "jalapeno"
-// length: 5
-// [[Prototype]]: Array(0)
-// name: "Pat"
 class App extends Component {
   constructor() {
     super();

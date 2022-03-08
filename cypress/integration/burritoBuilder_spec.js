@@ -99,8 +99,4 @@ describe('Burrito Builder User Flow', () => {
       .eq(3)
       .contains('carnitas')
   });
-
-  it('Should display the new order', () => {
-    
-  })
 });

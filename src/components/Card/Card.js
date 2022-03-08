@@ -3,11 +3,12 @@ import Ingredient from '../Ingredient/Ingredient'
 import './Card.css'
 
 const Card = props => {
-  const allIngredients = props.ingredients.map(ingredient => {
+  const allIngredients = props.ingredients.map((ingredient, index) => {
     return (
       <Ingredient
-        key={ingredient}
-        id={ingredient}
+        // key={Math.floor(Math.random() * 1000)}
+        key={index}
+        id={index}
         ingredient={ingredient}
       />
     )

@@ -53,4 +53,17 @@ describe('Burrito Builder User Flow', () => {
       .type('Dwight')
       .should('have.value', 'Dwight')
   });
+
+  it('Should add ingredients', () => {
+    cy.get('.ingredient-button')
+      .first()
+      .click()
+      .get('.order-message')
+      .should('have.text', 'Order: beans')
+      .get('.ingredient-button')
+      .eq(1)
+      .click()
+      .get('.order-message')
+      .should('have.text', 'Order: beans, steak')
+  });
 });

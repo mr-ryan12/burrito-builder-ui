@@ -66,4 +66,41 @@ describe('Burrito Builder User Flow', () => {
       .get('.order-message')
       .should('have.text', 'Order: beans, steak')
   });
+
+  it('Should add a new order', () => {
+    cy.intercept('POST', 'http://localhost:3001/api/v1/orders', { name: 'Dwight',  ingredients: ['beans', 'steak', 'carnitas']}).as('intercept-POST')
+    cy.get('input[name="name"]')
+      .type('Dwight')
+      .get('.ingredient-button')
+      .first()
+      .click()
+      .get('.ingredient-button')
+      .eq(1)
+      .click()
+      .get('.ingredient-button')
+      .eq(2)
+      .click()
+      .get('.submit-button')
+      .should('exist')
+      .click()
+      .wait('@intercept-POST')
+      .get('.order')
+      .should('have.length', 4)
+      .get('.order')
+      .eq(3)
+      .contains('Dwight')
+      .get('.order')
+      .eq(3)
+      .contains('beans')
+      .get('.order')
+      .eq(3)
+      .contains('steak')
+      .get('.order')
+      .eq(3)
+      .contains('carnitas')
+  });
+
+  it('Should display the new order', () => {
+    
+  })
 });

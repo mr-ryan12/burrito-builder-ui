@@ -70,7 +70,7 @@ class OrderForm extends Component {
 
         <p className="order-message">Order: { this.state.ingredients.join(', ') || 'Nothing selected' }</p>
 
-        {this.state.ingredients.length === 0 || this.state.name === '' ? <p className="submit-message">Please add your name and ingredients to submit an order</p> : <button onClick={e => this.handleSubmit(e)}>Submit Order</button>}
+        {this.state.ingredients.length === 0 || this.state.name === '' ? <p className="submit-message">Please add your name and ingredients to submit an order</p> : <button onClick={e => this.handleSubmit(e)} className="submit-button">Submit Order</button>}
         {this.state.error && <p>{this.state.error}</p>}
       </form>
     )

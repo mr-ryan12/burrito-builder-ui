@@ -1,0 +1,19 @@
+input,
+button {
+  margin: 5px;
+}
+
+input {
+  width: 10%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+form > button {
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 5%;
+  padding: 5px;
+}

@@ -4,11 +4,6 @@ describe('Burrito Builder User Flow', () => {
       .visit('http://localhost:3000')
   });
 
-  // it('Shoud have a background image', () => {
-  //   cy.get('main')
-  //     .should('have.css', 'background-image', "url('../../burritos.jpg')")
-  // })
-
   it('Should have a heading', () => {
     cy.get('h1')
       .should('have.text', 'Burrito Builder')

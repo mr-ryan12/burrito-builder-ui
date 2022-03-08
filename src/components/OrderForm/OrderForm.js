@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { addOrderApi } from '../../apiCalls'
+import './OrderForm.css'
 
 class OrderForm extends Component {
   constructor(props) {
     super(props);
-    // this.props = props;
     this.state = {
       name: '',
       ingredients: [],

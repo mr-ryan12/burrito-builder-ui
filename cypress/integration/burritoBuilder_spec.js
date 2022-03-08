@@ -28,4 +28,24 @@ describe('Burrito Builder User Flow', () => {
     cy.get('.order')
       .should('have.length', 3)
   });
+
+  it('Should display a message if ingredients are not selected', () => {
+    cy.get('.order-message')
+      .should('have.text', 'Order: Nothing selected')
+  });
+
+  it('Should display a message if the name field is empty', () => {
+    cy.get('input[name="name"]')
+      .should('have.value', '')
+      .get('.submit-message')
+      .should('have.text', 'Please add your name and ingredients to submit an order')
+  });
+
+  it('Should display a message if no ingredients are selected', () => {
+    cy.get('.order-message')
+      .should('have.text', 'Order: Nothing selected')
+      .get('.submit-message')
+      .should('have.text', 'Please add your name and ingredients to submit an order')
+  })
+      
 });

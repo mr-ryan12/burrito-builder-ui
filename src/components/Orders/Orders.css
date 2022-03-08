@@ -6,7 +6,18 @@
 }
 
 .ingredient-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   list-style-type: none;
   padding: 0;
-  width: 150px;
+  width: 100%
+}
+
+.orders-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  padding: 20px;
 }
